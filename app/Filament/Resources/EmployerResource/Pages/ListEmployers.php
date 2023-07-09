@@ -6,6 +6,7 @@ use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 use App\Filament\Resources\EmployerResource;
 use App\Filament\Resources\EmployerResource\Widgets\EmployerStatsOverview;
+use App\Filament\Resources\EmployerPostResource\Widgets\EmployerPostsChart;
 
 class ListEmployers extends ListRecords
 {
@@ -21,6 +22,7 @@ class ListEmployers extends ListRecords
     {
         return [
             EmployerStatsOverview::class,
+            // EmployerPostsChart::class,
         ];
     }
 

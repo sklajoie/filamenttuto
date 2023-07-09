@@ -22,6 +22,7 @@ use App\Filament\Resources\EmployerResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EmployerResource\RelationManagers;
 use App\Filament\Resources\EmployerResource\Widgets\EmployerStatsOverview;
+use App\Filament\Resources\EmployerPostResource\Widgets\EmployerPostsChart;
 
 class EmployerResource extends Resource
 {
@@ -119,9 +120,11 @@ class EmployerResource extends Resource
        
         return[
         EmployerStatsOverview::class,
+        EmployerPostsChart::class,
         ];
     }
     
+   
     public static function getPages(): array
     {
         return [

@@ -15,10 +15,13 @@ class EmployerStatsOverview extends BaseWidget
         $ci = Country::where('country_code', 'CI')->withCount('employers')->first();
         //  dd($ci->employers_count);
         return [
-            Card::make('All Employers', Employer::all()->count()),
+            Card::make('All Employers', Employer::all()->count())
+            ->chart([100, 150, 100, 200, 400, 250, 500])
+            ->color('success'),
             Card::make('USA Employers', $usa ? $usa->employers_count:0),
             Card::make('CI Employers', $ci ? $ci->employers_count:0),
             Card::make('Average time on page', '3:12'),
+            
         ];
     }
 }
