@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Employer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\EmployerResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/employers', function(){
+    $employers = Employer::orderBy('last_name', 'ASC')->get();
+
+    return EmployerResource::collection($employers);
 });
